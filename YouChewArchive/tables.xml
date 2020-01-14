@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<tables>
+  <table>
+    <name>core_sys_lang_words</name>
+    <datacontract>Lang</datacontract>
+    <databasecolumnid>word_id</databasecolumnid>
+  </table>
+  <table>
+    <name>core_permission_index</name>
+    <datacontract>PermissionIndex</datacontract>
+    <databasecolumnid>perm_id</databasecolumnid>
+  </table>
+  <table>
+    <name>core_reputation_index</name>
+    <datacontract>Reputation</datacontract>
+    <databasecolumnid>id</databasecolumnid>
+  </table>
+  <table>
+    <name>core_members</name>
+    <datacontract>Member</datacontract>
+    <databasecolumnid>member_id</databasecolumnid>
+    <url>member/{member_id}-{Logic.MemberLogic.LegalifyMemberSeo(this)}.html</url>
+  </table>
+  <table>
+    <name>core_groups</name>
+    <datacontract>Group</datacontract>
+    <description>core_group_{g_id}</description>
+    <databasecolumnid>g_id</databasecolumnid>
+  </table>
+  <table>
+    <name>forums_forums</name>
+    <datacontract>Forum</datacontract>
+    <databasecolumnid>id</databasecolumnid>
+    <description>forums_forum_{id}</description>
+    <permapp>forums</permapp>
+    <permtype>forum</permtype>
+    <url>forum/{Id}-{name_seo}/1.html</url>
+  </table>
+  <table>
+    <name>forums_topics</name>
+    <datacontract>Topic</datacontract>
+    <databasecolumnid>tid</databasecolumnid>
+    <databasecolumnmap>
+      <column key="author" value="starter_id"></column>
+      <column key="author_name" value="starter_name"></column>
+      <column key="container" value="forum_id"></column>
+      <column key="date" value="start_date"></column>
+      <column key="title" value="title"></column>
+      <column key="num_comments" value="posts"></column>
+      <column key="unapproved_comments" value="topic_queuedposts"></column>
+      <column key="hidden_comments" value="topic_hiddenposts"></column>
+      <column key="first_comment_id" value="topic_firstpost"></column>
+      <column key="last_comment" value="last_post"></column>
+      <column key="last_comment_by" value="last_poster_id"></column>
+      <column key="last_comment_name" value="last_poster_name"></column>
+      <column key="views" value="views"></column>
+      <column key="approved" value="approved"></column>
+      <column key="pinned" value="pinned"></column>
+      <column key="poll" value="poll_state"></column>
+      <column key="status" value="state"></column>
+      <column key="moved_to" value="moved_to"></column>
+      <column key="moved_on" value="moved_on"></column>
+      <column key="featured" value="featured"></column>
+      <column key="state" value="state"></column>
+      <column key="updated" value="last_post"></column>
+      <column key="meta_data" value="topic_meta_data"></column>
+    </databasecolumnmap>
+  </table>
+  <table>
+    <name>forums_posts</name>
+    <datacontract>Post</datacontract>
+    <application>forums</application>
+    <databasecolumnid>pid</databasecolumnid>
+    <databasecolumnmap>
+      <column key="item" value="topic_id"></column>
+      <column key="author" value="author_id"></column>
+      <column key="author_name" value="author_name"></column>
+      <column key="content" value="post"></column>
+      <column key="date" value="post_date"></column>
+      <column key="ip_address" value="ip_address"></column>
+      <column key="edit_time" value="edit_time"></column>
+      <column key="edit_show" value="append_edit"></column>
+      <column key="edit_member_name" value="edit_name"></column>
+      <column key="edit_reason" value="post_edit_reason"></column>
+      <column key="hidden" value="queued"></column>
+      <column key="first" value="new_topic"></column>
+    </databasecolumnmap>
+  </table>
+  <table>
+    <name>blog_blogs</name>
+    <datacontract>Blog</datacontract>
+    <description>blogs_blog_{Id}</description>
+    <databaseprefix>blog_</databaseprefix>
+    <databasecolumnid>id</databasecolumnid>
+    <databasecolumnmap>
+      <column key="author" value="member_id"></column>
+      <column key="title" value="name"></column>
+      <column key="views" value="num_views"></column>
+      <column key="pinned" value="pinned"></column>
+      <column key="featured" value="featured"></column>
+      <column key="date" value="last_edate"></column>
+      <column key="cover_photo" value="cover_photo"></column>
+      <column key="cover_photo_offset" value="cover_photo_offset"></column>
+    </databasecolumnmap>
+  </table>
+  <table>
+    <name>blog_entries</name>
+    <datacontract>BlogEntry</datacontract>
+    <application>blog</application>
+    <databasecolumnid>id</databasecolumnid>
+    <databaseprefix>entry_</databaseprefix>
+    <databasecolumnmap>
+      <column key="author" value="author_id"></column>
+      <column key="author_name" value="author_name"></column>
+      <column key="content" value="content"></column>
+      <column key="container" value="blog_id"></column>
+      <column key="date" value="date"></column>
+      <column key="updated" value="last_update"></column>
+      <column key="title" value="name"></column>
+      <column key="num_comments" value="num_comments"></column>
+      <column key="unapproved_comments" value="queued_comments"></column>
+      <column key="hidden_comments" value="hidden_comments"></column>
+      <column key="last_comment_by" value="last_comment_mid"></column>
+      <column key="last_comment" value="last_update"></column>
+      <column key="views" value="views"></column>
+      <column key="approved" value="hidden"></column>
+      <column key="pinned" value="pinned"></column>
+      <column key="poll" value="poll_state"></column>
+      <column key="featured" value="featured"></column>
+      <column key="ip_address" value="ip_address"></column>
+      <column key="locked" value="locked"></column>
+      <column key="cover_photo" value="cover_photo"></column>
+      <column key="cover_photo_offset" value="cover_offset"></column>
+      <column key="is_future_entry" value="is_future_entry"></column>
+      <column key="future_date" value="publish_date"></column>
+      <column key="status" value="status"></column>
+      <column key="meta_data" value="meta_data"></column>
+    </databasecolumnmap>
+  </table>
+  <table>
+    <name>blog_comments</name>
+    <datacontract>BlogComment</datacontract>
+    <application>blog</application>
+    <databasecolumnid>id</databasecolumnid>
+    <databaseprefix>comment_</databaseprefix>
+    <databasecolumnmap>
+        <column key="item" value="entry_id"></column>
+        <column key="author" value="member_id"></column>
+        <column key="author_name" value="member_name"></column>
+        <column key="content" value="text"></column>
+        <column key="date" value="date"></column>
+        <column key="ip_address" value="ip_address"></column>
+        <column key="edit_time" value="edit_time"></column>
+        <column key="edit_member_name" value="edit_member_name"></column>
+        <column key="edit_show" value="edit_show"></column>
+        <column key="approved" value="approved"></column>
+    </databasecolumnmap>
+  </table>
+  <table>
+    <name>core_message_topics</name>
+    <datacontract>Conversation</datacontract>
+    <databaseprefix>mt_</databaseprefix>
+    <application>core</application>
+    <databasecolumnid>id</databasecolumnid>
+    <databasecolumnmap>
+      <column key="title" value="title"></column>
+      <column key="date" value="last_post_time"></column>
+      <column key="author" value="starter_id"></column>
+      <column key="num_comments" value="replies"></column>
+      <column key="last_comment" value="last_post_time"></column>
+      <column key="first_comment_id" value="first_msg_id"></column>
+    </databasecolumnmap>
+  </table>
+  <table>
+    <name>core_message_posts</name>
+    <datacontract>Message</datacontract>
+    <application>core</application>
+    <databaseprefix>msg_</databaseprefix>
+    <databasecolumnid>id</databasecolumnid>
+    <databasecolumnmap>
+      <column key="item" value="topic_id"></column>
+      <column key="date" value="date"></column>
+      <column key="content" value="post"></column>
+      <column key="author" value="author_id"></column>
+      <column key="ip_address" value="ip_address"></column>
+      <column key="first" value="is_first_post"></column>
+    </databasecolumnmap>
+  </table>
+  <table>
+    <name>core_message_topic_user_map</name>
+    <datacontract>MessageTopicUserMap</datacontract>
+    <application>core</application>
+    <databasecolumnid>id</databasecolumnid>
+    <databaseprefix>map_</databaseprefix>
+  </table>
+  <table>
+    <name>videos_videos</name>
+    <datacontract>Video</datacontract>
+    <databasecolumnid>tid</databasecolumnid>
+    <application>videos</application>
+    <reputationtypeid>video_id</reputationtypeid>
+    <databasecolumnmap>
+      <column key="title" value="title"></column>
+      <column key="date" value="date"></column>
+      <column key="updated" value="last_updated"></column>
+      <column key="author" value="video_author_id"></column>
+      <column key="views" value="views"></column>
+      <column key="content" value="description"></column>
+      <column key="container" value="cid"></column>
+      <column key="num_comments" value="num_comments"></column>
+      <column key="featured" value="featured"></column>
+      <column key="approved" value="video_status"></column>
+      <column key="rating_average" value="video_rating"></column>
+      <column key="rating_hits" value="num_votes"></column> 
+     </databasecolumnmap>
+  </table>
+  <table>
+    <name>videos_comments</name>
+    <datacontract>VideoComment</datacontract>
+    <databaseprefix>comment_</databaseprefix>
+    <databasecolumnid>id</databasecolumnid>
+    <application>videos</application>
+    <databasecolumnmap>
+      <column key="item" value="video_id"></column>
+      <column key="author" value="member_id"></column>
+      <column key="author_name" value="member_name"></column>
+      <column key="content" value="text"></column>
+      <column key="date" value="date_added"></column>
+      <column key="ip_address" value="ip_address"></column>
+      <column key="edit_time" value="edit_time"></column>
+      <column key="edit_member_name" value="edit_name"></column>
+      <column key="edit_show" value="append_edit"></column>
+      <column key="approved" value="approved"></column>
+    </databasecolumnmap>
+  </table>
+  <table>
+    <name>videos_cat</name>
+    <datacontract>VideoCategory</datacontract>
+    <databasecolumnid>id</databasecolumnid>
+    <description>videos_category_{Id}</description>
+  </table>
+  <table>
+    <name>core_member_status_updates</name>
+    <datacontract>Status</datacontract>
+    <databaseprefix>status_</databaseprefix>
+    <databasecolumnid>id</databasecolumnid>
+    <application>core</application>
+    <databasecolumnmap>
+      <column key="date" value="date"></column>
+      <column key="author" value="author_id"></column>
+      <column key="num_comments" value="replies"></column>
+      <column key="locked" value="is_locked"></column>
+      <column key="approved" value="approved"></column>
+      <column key="ip_address" value="author_ip"></column>
+      <column key="content" value="content"></column>
+      <column key="title" value="content"></column>
+    </databasecolumnmap>
+  </table>
+  <table>
+    <name>core_member_status_replies</name>
+    <datacontract>Reply</datacontract>
+    <databasecolumnid>id</databasecolumnid>
+    <databaseprefix>reply_</databaseprefix>
+    <application>core</application>
+    <databasecolumnmap>
+      <column key="item" value="status_id"></column>
+      <column key="date" value="date"></column>
+      <column key="content" value="content"></column>
+      <column key="author" value="member_id"></column>
+      <column key="approved" value="approved"></column>
+      <column key="ip_address" value="ip_address"></column>
+    </databasecolumnmap>
+  </table>
+</tables>

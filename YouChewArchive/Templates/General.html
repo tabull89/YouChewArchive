@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en-us" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{Title}</title>
+    <base href="{Base}" />
+
+    <link href="css/bootstrap-with-slate.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="uploads/monthly_2015_08/favicon.ico.b7e1c785192aa90a83508b2f02a7c536.ico">
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">YouChew Archive</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    {NavBar}
+                </ul>
+            </div>
+        </div>
+    </nav>    
+    <div id="content" class="container">
+        {Breadcrumb}
+        {Content}
+    </div>
+
+    <footer class="page-footer">
+        <div class="container-fluid text-center">
+            <div class="row">YouChew Archive - Created By tabull</div>
+            <div class="row">Built with <a href="http://getbootstrap.com/">Bootstrap</a> using the <a href="https://bootswatch.com/slate/">Slate theme</a>.</div>
+        </div>
+    </footer>
+
+    <script src="js/jquery-3.3.1-bootstrap-moment-with-locales-script.min.js"></script>
+</body>
+</html>

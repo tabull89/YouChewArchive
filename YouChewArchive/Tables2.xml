@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<tables>
+  <table>
+    <name>core_pfields_data</name>
+    <datacontract>ProfileFieldData</datacontract>
+    <databaseprefix>pf_</databaseprefix>
+    <databasecolumnid>id</databasecolumnid>
+    <description>core_pfield_{Id}</description>
+  </table>
+  <table>
+    <name>core_pfields_content</name>
+    <datacontract>ProfileFields</datacontract>
+    <databasecolumnid>member_id</databasecolumnid>
+    <fieldmap>ProfileFieldData</fieldmap>
+    <fieldmapnamefrom>{Description}</fieldmapnamefrom>
+    <fieldmapnameto>field_{Id}</fieldmapnameto>
+  </table>
+  <table>
+    <name>awards_awards</name>
+    <datacontract>Award</datacontract>
+    <databasecolumnid>id</databasecolumnid>
+  </table>
+  <table>
+    <name>awards_awarded</name>
+    <datacontract>UserAward</datacontract>
+    <databasecolumnid>row_id</databasecolumnid>
+  </table>
+  <table>
+    <name>core_member_history</name>
+    <datacontract>MemberHistory</datacontract>
+    <databasecolumnid>id</databasecolumnid>
+    <databaseprefix>log_</databaseprefix>
+  </table>
+  <table>
+    <name>awards_categories</name>
+    <datacontract>AwardCategory</datacontract>
+    <databasecolumnid>cat_id</databasecolumnid>
+  </table>
+</tables>

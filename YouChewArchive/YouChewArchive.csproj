@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF5F0CAD-EA72-43D8-A576-DD9CE58C6F32}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YouChewArchive</RootNamespace>
+    <AssemblyName>YouChewArchive</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CsvHelper, Version=7.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.7.1.1\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.8.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.8.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TidyHTML5Managed, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TidyHtml5ManagedRepack.1.1.4\lib\net46\TidyHTML5Managed.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\IgnoreAttribute.cs" />
+    <Compile Include="Classes\ForumContainer.cs" />
+    <Compile Include="Classes\MemberFilter.cs" />
+    <Compile Include="Classes\Progress.cs" />
+    <Compile Include="Classes\ProgressEventArgs.cs" />
+    <Compile Include="Classes\StopWatch.cs" />
+    <Compile Include="CSV\BanFilterCSV.cs" />
+    <Compile Include="CSV\BannedMemberCSV.cs" />
+    <Compile Include="CSV\BannedMemberIPCSV.cs" />
+    <Compile Include="CSV\BannedMemberWarnLogCSV.cs" />
+    <Compile Include="DataContracts\Awards\Award.cs" />
+    <Compile Include="DataContracts\Awards\AwardCategory.cs" />
+    <Compile Include="DataContracts\Blogs\Blog.cs" />
+    <Compile Include="DataContracts\Blogs\Blog.Info.cs" />
+    <Compile Include="DataContracts\Blogs\BlogComment.cs" />
+    <Compile Include="DataContracts\Blogs\BlogEntry.cs" />
+    <Compile Include="DataContracts\Messages\Conversation.cs" />
+    <Compile Include="DataContracts\Forums\Forum.cs" />
+    <Compile Include="DataContracts\Members\Group.cs" />
+    <Compile Include="DataContracts\Forums\HighestReputation.cs" />
+    <Compile Include="DataContracts\Image.cs" />
+    <Compile Include="DataContracts\ISColumn.cs" />
+    <Compile Include="DataContracts\Lang.cs" />
+    <Compile Include="DataContracts\Members\Member.cs" />
+    <Compile Include="DataContracts\Members\Member.Profile.cs" />
+    <Compile Include="DataContracts\Members\MemberBannedInfo.cs" />
+    <Compile Include="DataContracts\Members\MemberHistory.cs" />
+    <Compile Include="DataContracts\Messages\Message.cs" />
+    <Compile Include="DataContracts\Messages\MessageTopicUserMap.cs" />
+    <Compile Include="DataContracts\PermissionIndex.cs" />
+    <Compile Include="DataContracts\Forums\Post.cs" />
+    <Compile Include="DataContracts\Members\ProfileFieldData.cs" />
+    <Compile Include="DataContracts\Members\ProfileFields.cs" />
+    <Compile Include="DataContracts\Statuses\Reply.cs" />
+    <Compile Include="DataContracts\Reputation.cs" />
+    <Compile Include="DataContracts\SingleInteger.cs" />
+    <Compile Include="DataContracts\Statuses\Status.cs" />
+    <Compile Include="DataContracts\Forums\Topic.cs" />
+    <Compile Include="DataContracts\Awards\UserAward.cs" />
+    <Compile Include="DataContracts\Videos\Video.cs" />
+    <Compile Include="DataContracts\Videos\VideoCategory.cs" />
+    <Compile Include="DataContracts\Videos\VideoComment.cs" />
+    <Compile Include="DataContracts\Members\WarnLog.cs" />
+    <Compile Include="DataContracts\Members\WarnReason.cs" />
+    <Compile Include="Data\ClassGenerator.cs" />
+    <Compile Include="Data\DB.cs" />
+    <Compile Include="Data\Table.cs" />
+    <Compile Include="Logic\AppLogic.cs" />
+    <Compile Include="Logic\AwardLogic.cs" />
+    <Compile Include="Logic\BlogLogic.cs" />
+    <Compile Include="Logic\ContainerLogic.cs" />
+    <Compile Include="Logic\ContentLogic.cs" />
+    <Compile Include="Logic\EventLogic.cs" />
+    <Compile Include="Logic\ForumLogic.cs" />
+    <Compile Include="Logic\ImageLogic.cs" />
+    <Compile Include="Logic\ItemLogic.cs" />
+    <Compile Include="Logic\LangLogic.cs" />
+    <Compile Include="Logic\LogLogic.cs" />
+    <Compile Include="Logic\MemberLogic.cs" />
+    <Compile Include="Logic\MessageLogic.cs" />
+    <Compile Include="Logic\Output.cs" />
+    <Compile Include="Logic\PermissionLogic.cs" />
+    <Compile Include="Logic\RepuationLogic.cs" />
+    <Compile Include="Logic\StatusLogic.cs" />
+    <Compile Include="Logic\VideoLogic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tables.xml" />
+    <Content Include="Tables2.xml" />
+    <Content Include="Tables3.xml" />
+    <Content Include="Templates\General.html" />
+    <Content Include="Templates\Home.html" />
+    <Content Include="Templates\Search.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\TidyHtml5ManagedRepack.1.1.4\build\TidyHtml5ManagedRepack.targets" Condition="Exists('..\packages\TidyHtml5ManagedRepack.1.1.4\build\TidyHtml5ManagedRepack.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\TidyHtml5ManagedRepack.1.1.4\build\TidyHtml5ManagedRepack.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\TidyHtml5ManagedRepack.1.1.4\build\TidyHtml5ManagedRepack.targets'))" />
+  </Target>
+</Project>
